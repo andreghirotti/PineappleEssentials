@@ -1,0 +1,17 @@
+name: Pineapple-Essentials
+version: '1.1.2'
+main: com.thrones.pineappleEssentials.Main
+api-version: '1.21'
+authors: [ ImThrones ]
+description: Adiciona recursos de qualidade de vida ao SMP.
+website: github.com/andreghirotti
+commands:
+  kit:
+    description: Com o /kit você ganha algumas ferramentas básicas para ajudar no começo de sua jornada!
+  comandos:
+    description: Lista de comandos existentes
+  mortes:
+    description: Lista de quantas vezes os jogadores já morreram
+  diamante:
+    description: Utilize para receber um diamante
+

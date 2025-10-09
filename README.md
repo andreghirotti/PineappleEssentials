@@ -1,1 +1,1 @@
-# 🍍 Pineapple Essentials - v1.02
+# 🍍 Pineapple Essentials - v1.1.2

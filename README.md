@@ -1,4 +1,4 @@
-# 🍍 Pineapple Essentials - v1.1.2
+# 🍍 Pineapple Essentials - v1.1.2 `Minecraft Spigot 1.21.X`
 
 **Pineapple Essentials** é um plugin leve e de qualidade de vida (QoL) feito em Spigot, pensado para tornar a experiência no seu servidor mais divertida! 🌟
 

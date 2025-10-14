@@ -33,15 +33,6 @@ public class EventHandler implements Listener {
                 0.5, 1.0, 0.5, // Spread
                 0.01); // Speed
 
-        if (getServer().getOnlinePlayers().size() >1) {
-            e.getPlayer().setPlayerListHeaderFooter("" + ChatColor.GREEN + ChatColor.BOLD + "Pineapple Empire",
-                    "" + ChatColor.GOLD + ChatColor.BOLD+ getServer().getOnlinePlayers().size() +
-                            ChatColor.RESET + " jogadores online");
-        } else {
-            e.getPlayer().setPlayerListHeaderFooter("" + ChatColor.GREEN + ChatColor.BOLD + "Pineapple Empire",
-                    "" + ChatColor.GOLD + ChatColor.BOLD+ getServer().getOnlinePlayers().size() +
-                            ChatColor.RESET + " jogador online");
-        }
 
         //Welcomes the Player
         if (!(p.hasPlayedBefore()) || p.getName().equals("ImThrones")) {
@@ -57,12 +48,33 @@ public class EventHandler implements Listener {
 
         }
 
+        updateTabListForAll();
+
     }
 
 
     @org.bukkit.event.EventHandler
     public void onPlayerLeaves(PlayerQuitEvent e){
         e.setQuitMessage(""+ ChatColor.WHITE + ChatColor.BOLD + e.getPlayer().getName() + ChatColor.RESET+ChatColor.GREEN + " saiu do servidor!");
+        updateTabListForAll();
+    }
+
+    public void updateTabListForAll() {
+        int online = getServer().getOnlinePlayers().size();
+        final String header = "" + ChatColor.GREEN + ChatColor.BOLD + "Pineapple Empire";
+        String footer;
+
+        if (online > 1){
+            footer = "" + ChatColor.GOLD + ChatColor.BOLD+ getServer().getOnlinePlayers().size() +
+                    ChatColor.RESET + " jogadores online";
+        } else {
+            footer = "" + ChatColor.GOLD + ChatColor.BOLD+ getServer().getOnlinePlayers().size() +
+                    ChatColor.RESET + " jogador online";
+        }
+
+        for (Player player : getServer().getOnlinePlayers()){
+            player.setPlayerListHeaderFooter(header, footer);
+        }
     }
 
 

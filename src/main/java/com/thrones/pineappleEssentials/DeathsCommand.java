@@ -40,10 +40,16 @@ public class DeathsCommand implements CommandExecutor {
             sender.sendMessage("");
             int rank = 1;
             for (Map.Entry<String, Integer> entry : deathList) {
+                if (entry.getValue()!=1){
+                    sender.sendMessage("" + ChatColor.GOLD + ChatColor.BOLD + rank + ". " + ChatColor.RESET + ChatColor.BOLD + entry.getKey() + ":" + ChatColor.RESET + ChatColor.GRAY + " morreu " + ChatColor.RED + ChatColor.BOLD + entry.getValue() +
+                            ChatColor.RESET + ChatColor.GRAY + " vezes");
+                    rank++;
+                } else {
+                    sender.sendMessage("" + ChatColor.GOLD + ChatColor.BOLD + rank + ". " + ChatColor.RESET + ChatColor.BOLD + entry.getKey() + ":" + ChatColor.RESET + ChatColor.GRAY + " morreu " + ChatColor.RED + ChatColor.BOLD + entry.getValue() +
+                            ChatColor.RESET + ChatColor.GRAY + " vez");
+                    rank++;
+                }
 
-                sender.sendMessage("" + ChatColor.GOLD + ChatColor.BOLD + rank + ". " + ChatColor.RESET + ChatColor.BOLD + entry.getKey() + ":" + ChatColor.RESET + ChatColor.GRAY + " morreu " + ChatColor.RED + ChatColor.BOLD + entry.getValue() +
-                        ChatColor.RESET + ChatColor.GRAY + " vezes");
-                rank++;
                 if (rank > 10) break; // Top 10 apenas
             }
 

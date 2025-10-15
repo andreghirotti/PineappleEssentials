@@ -1,1 +1,3 @@
-# 🍍 Pineapple Essentials - v1.1.2
+# 🍍 Pineapple Essentials - v1.1.3 - Test Branch
+
+- Fixed players tablists. -> EventHandler.java

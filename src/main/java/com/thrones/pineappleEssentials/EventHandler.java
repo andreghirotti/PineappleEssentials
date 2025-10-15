@@ -48,7 +48,7 @@ public class EventHandler implements Listener {
 
         }
 
-        updateTabListForAll();
+        updateTabListForAll("join");
 
     }
 
@@ -56,19 +56,23 @@ public class EventHandler implements Listener {
     @org.bukkit.event.EventHandler
     public void onPlayerLeaves(PlayerQuitEvent e){
         e.setQuitMessage(""+ ChatColor.WHITE + ChatColor.BOLD + e.getPlayer().getName() + ChatColor.RESET+ChatColor.GREEN + " saiu do servidor!");
-        updateTabListForAll();
+        updateTabListForAll("quit");
     }
 
-    public void updateTabListForAll() {
+    public void updateTabListForAll(String qj) {
         int online = getServer().getOnlinePlayers().size();
         final String header = "" + ChatColor.GREEN + ChatColor.BOLD + "Pineapple Empire";
         String footer;
 
+        if (qj.equals("quit")) online--; // Checks if the class was called from an onPlayerLeaves event.
+        // If it was, decrease the online variable by one since the game registers the online players size before player quits.
+
+
         if (online > 1){
-            footer = "" + ChatColor.GOLD + ChatColor.BOLD+ getServer().getOnlinePlayers().size() +
+            footer = "" + ChatColor.GOLD + ChatColor.BOLD+ online +
                     ChatColor.RESET + " jogadores online";
         } else {
-            footer = "" + ChatColor.GOLD + ChatColor.BOLD+ getServer().getOnlinePlayers().size() +
+            footer = "" + ChatColor.GOLD + ChatColor.BOLD+ online +
                     ChatColor.RESET + " jogador online";
         }
 

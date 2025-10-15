@@ -11,7 +11,7 @@ public final class Main extends JavaPlugin implements Listener {
     //Adicionar /mortes -> Mostra a lista dos jogadores do servidor e o numero de mortes ✅
     //Adicionar um "Clique aqui para mandar um OI" na mensagem de quando alguem entra
     //Adicionar /comandos ✅
-    //Consertar X players online. For loop onPlayerJoin onPlayerQuit pra atualizar pra todos os jogadores online
+    //Consertar X players online. For loop onPlayerJoin onPlayerQuit pra atualizar pra todos os jogadores online ✅
 
     @Override
     public void onEnable() {
